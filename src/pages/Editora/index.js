@@ -11,7 +11,8 @@ import { useState, useContext, useEffect } from "react";
 import AxiosInstance from "../../api/AxiosInstance";
 import { DataContext } from "../../context/DataContext";
 import { ScrollView } from "react-native-gesture-handler";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
+import { Header } from "../../../global/Header";
 
 export function Editora({ route }) {
   const navigation = useNavigation();
@@ -37,12 +38,18 @@ export function Editora({ route }) {
 
   return (
     <ScrollView>
+      <StatusBar />
       <View style={styles.container}>
+        <Header />
         {editora != null ? (
           editora.listaLivrosDTO.map((livro) => {
             console.log(livro);
             return (
-              <TouchableOpacity onPress={() => {navigation.navigate('Livro', {idLivro : livro.codigoLivro})}}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate("Livro", { idLivro: livro.codigoLivro });
+                }}
+              >
                 <Image
                   source={{ uri: `data:image/png;base64,${livro.imagem}` }}
                   style={styles.livro}
@@ -62,9 +69,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "rgba(57,68,87,1)",
-    justifyContent: "center",
     alignItems: "center",
-    minHeight: 653,
+    minHeight: 700,
   },
   livro: {
     margin: 10,

@@ -5,7 +5,6 @@ import {
   Image,
   StatusBar,
   FlatList,
-  Touchable,
 } from "react-native";
 import { ScrollView } from "react-native";
 import { useContext, useState, useEffect } from "react";
@@ -13,6 +12,7 @@ import AxiosInstance from "../../api/AxiosInstance";
 import { DataContext } from "../../context/DataContext";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
+import { Header } from "../../../global/Header";
 
 export function Home() {
   const navigation = useNavigation();
@@ -99,6 +99,8 @@ export function Home() {
 
   return (
     <View style={styles.container}>
+      <StatusBar/>
+      <Header/>
       <ScrollView>
         <StatusBar />
         <View>
