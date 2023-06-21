@@ -1,4 +1,4 @@
-<div align="center"> TRABALHO REACT NATIVE - LIVRARIA
+<div align="center"> TRABALHO 1 REACT NATIVE - LIVRARIA
   
 <div align="center">
 
