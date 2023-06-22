@@ -37,9 +37,10 @@ export function Editora({ route }) {
   }, []);
 
   return (
-    <ScrollView>
-      <StatusBar />
+    
+      <ScrollView>
       <View style={styles.container}>
+      <StatusBar />
         <Header />
         {editora != null ? (
           editora.listaLivrosDTO.map((livro) => {
@@ -61,7 +62,8 @@ export function Editora({ route }) {
           <Text>Carregando...</Text>
         )}
       </View>
-    </ScrollView>
+      </ScrollView>
+    
   );
 }
 
