@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, StatusBar } from "react-native";
 import { useState, useContext, useEffect } from "react";
 import AxiosInstance from "../../api/AxiosInstance";
 import { DataContext } from "../../context/DataContext";
+import { Footer } from "../../../global/Footer";
 
 export function Livro({ route }) {
   const { dadosUsuario } = useContext(DataContext);
@@ -42,6 +43,7 @@ export function Livro({ route }) {
       ) : (
         <Text style={styles.info}>Carregando...</Text>
       )}
+      <Footer/>
     </View>
   );
 }

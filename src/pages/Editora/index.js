@@ -14,6 +14,7 @@ import { DataContext } from "../../context/DataContext";
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import { Header } from "../../../global/Header";
+import { Footer } from "../../../global/Footer";
 
 export function Editora({ route }) {
   const navigation = useNavigation();
@@ -65,6 +66,7 @@ export function Editora({ route }) {
       ) : (
         <Text style={styles.info}>Carregando...</Text>
       )}
+      <Footer/>
     </View>
   );
 }

@@ -13,6 +13,7 @@ import { DataContext } from "../../context/DataContext";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import { Header } from "../../../global/Header";
+import { Footer } from "../../../global/Footer";
 
 export function Home() {
   const navigation = useNavigation();
@@ -137,6 +138,7 @@ export function Home() {
             </View>
           </TouchableOpacity>
         </View>
+        <Footer/>
       </ScrollView>
     </View>
   );
