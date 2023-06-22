@@ -88,18 +88,22 @@ export function Home() {
     let j = 0;
     let newArray = array;
 
-    while (i != 0) {
-      j = Math.floor(Math.random() * i);
-      i--;
-      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    if(array.length >= 10) {
+      while (i != 0) {
+        j = Math.floor(Math.random() * i);
+        i--;
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      let final = newArray.splice(0, 10);
+      return final;
+    } else {
+      return array
     }
-    let final = newArray.splice(0, 10);
-    return final;
   }
 
   return (
     <View style={styles.container}>
-      <StatusBar/>
+      <StatusBar />
       <ScrollView>
         <StatusBar />
         <View>
@@ -121,15 +125,17 @@ export function Home() {
         </View>
         <Text style={styles.title}>Destaques</Text>
         <View>
-          <View style={styles.itemDestaque}>
-            <Image
-              style={styles.destaque}
-              source={{
-                uri: "https://about.proquest.com/globalassets/proquest/media/images/decrotive/oldbooks.jpg",
-              }}
-            />
-            <Text style={styles.titleItem}>Destaque 1</Text>
-          </View>
+          <TouchableOpacity>
+            <View style={styles.itemDestaque}>
+              <Image
+                style={styles.destaque}
+                source={{
+                  uri: "https://about.proquest.com/globalassets/proquest/media/images/decrotive/oldbooks.jpg",
+                }}
+              />
+              <Text style={styles.titleItem}>Destaque 1</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>

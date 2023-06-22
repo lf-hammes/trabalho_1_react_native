@@ -16,7 +16,7 @@ export function Login({ navigation }) {
   const [usuario, setUsuario] = useState();
   const [senha, setSenha] = useState();
   const { armazenarDadosUsuario } = useContext(DataContext);
-  const [showSenha, setShowSenha] = useState(false)
+  const [showSenha, setShowSenha] = useState(false);
 
   async function handleLogin() {
     try {
@@ -65,9 +65,11 @@ export function Login({ navigation }) {
           onChangeText={setSenha}
           value={senha}
         />
-        <TouchableOpacity onPress={() => {
-          showSenha == false ? (setShowSenha(true)) : (setShowSenha(false))
-        }}>
+        <TouchableOpacity
+          onPress={() => {
+            showSenha == false ? setShowSenha(true) : setShowSenha(false);
+          }}
+        >
           <Ionicons name="eye-outline" size={18} />
         </TouchableOpacity>
       </View>
@@ -115,7 +117,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     display: "flex",
     flexDirection: "row",
-    alignItems: 'center',
+    alignItems: "center",
     padding: 10,
     marginTop: 10,
   },

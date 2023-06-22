@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   StatusBar,
+  FlatList,
 } from "react-native";
 import { useState, useContext, useEffect } from "react";
 import AxiosInstance from "../../api/AxiosInstance";
@@ -20,7 +21,22 @@ export function Editora({ route }) {
   const [editora, setEditora] = useState(null);
   const idEditora = route.params?.idEditora;
 
-  async function getLivros() {
+  const Livro = ({ item }) => (
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate("Livro", { idLivro: item.codigoLivro });
+      }}
+    >
+      <View style={styles.itemLivro}>
+        <Image
+          style={styles.livro}
+          source={{ uri: `data:image/png;base64,${item.imagem}` }}
+        />
+      </View>
+    </TouchableOpacity>
+  );
+
+  async function getEditora() {
     try {
       const newEditora = await AxiosInstance.get(`/editoras/${idEditora}`, {
         headers: { Authorization: `Bearer ${dadosUsuario?.token}` },
@@ -32,33 +48,23 @@ export function Editora({ route }) {
   }
 
   useEffect(() => {
-    getLivros();
+    getEditora();
   }, []);
 
   return (
     <View style={styles.container}>
       <StatusBar />
-      <ScrollView>
-        {editora != null ? (
-          editora.listaLivrosDTO.map((livro) => {
-            console.log(livro);
-            return (
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate("Livro", { idLivro: livro.codigoLivro });
-                }}
-              >
-                <Image
-                  source={{ uri: `data:image/png;base64,${livro.imagem}` }}
-                  style={styles.livro}
-                />
-              </TouchableOpacity>
-            );
-          })
-        ) : (
-          <Text>Carregando...</Text>
-        )}
-      </ScrollView>
+
+      {editora != null ? (
+        <View>
+          <FlatList
+            data={editora.listaLivrosDTO}
+            renderItem={({ item }) => <Livro item={item} />}
+          />
+        </View>
+      ) : (
+        <Text style={styles.info}>Carregando...</Text>
+      )}
     </View>
   );
 }
@@ -70,8 +76,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   livro: {
-    margin: 10,
+    marginVertical: 20,
     width: 198,
     height: 300,
+  },
+  itemLivro: {
+    width: 198,
+    height: 320,
+  },
+  info: {
+    color: "white",
+    fontSize: 20,
+    marginHorizontal: 10,
   },
 });
