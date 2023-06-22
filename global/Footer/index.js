@@ -21,7 +21,9 @@ export function Footer() {
       >
         <Ionicons name="home" size={30} style={{color: '#fcbc5c'}}/>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => {
+        navigation.navigate('Procura')
+      }}>
         <Ionicons name="search" size={30} style={{color: '#fcbc5c'}}/>
       </TouchableOpacity>
       <TouchableOpacity>
