@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "white",
+    color: "#fcbc5c",
     marginHorizontal: 10,
   },
   itemDestaque: {

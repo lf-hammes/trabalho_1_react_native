@@ -94,12 +94,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
+    color: 'white'
   },
   saudacao: {
     fontSize: 30,
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
+    color: 'white'
   },
   input: {
     fontSize: 15,

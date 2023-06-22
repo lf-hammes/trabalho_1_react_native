@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   info: {
-    color: "white",
+    color: "#fcbc5c",
     fontSize: 20,
     marginHorizontal: 10,
   },

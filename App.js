@@ -15,7 +15,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerStyle: {
           backgroundColor: 'rgba(43, 51, 65, 1)'
-        }, headerTintColor: 'white'}}>
+        }, headerTintColor: '#fcbc5c'}}>
           <Stack.Screen name="Login" component={Login} options = {{headerShown: false}}/>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Editora" component={Editora} />

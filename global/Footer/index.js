@@ -19,16 +19,16 @@ export function Footer() {
           navigation.navigate("Home");
         }}
       >
-        <Ionicons name="home" size={30} />
+        <Ionicons name="home" size={30} style={{color: '#fcbc5c'}}/>
       </TouchableOpacity>
       <TouchableOpacity>
-        <Ionicons name="search" size={30} />
+        <Ionicons name="search" size={30} style={{color: '#fcbc5c'}}/>
       </TouchableOpacity>
       <TouchableOpacity>
-        <Ionicons name="heart" size={30} />
+        <Ionicons name="heart" size={30} style={{color: '#fcbc5c'}}/>
       </TouchableOpacity>
       <TouchableOpacity>
-        <Ionicons name="basket" size={30} />
+        <Ionicons name="basket" size={30} style={{color: '#fcbc5c'}}/>
       </TouchableOpacity>
     </View>
   );
