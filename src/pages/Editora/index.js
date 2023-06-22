@@ -53,21 +53,23 @@ export function Editora({ route }) {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <StatusBar />
+    <>
+      <View style={styles.container}>
+        <StatusBar />
 
-      {editora != null ? (
-        <View>
-          <FlatList
-            data={editora.listaLivrosDTO}
-            renderItem={({ item }) => <Livro item={item} />}
-          />
-        </View>
-      ) : (
-        <Text style={styles.info}>Carregando...</Text>
-      )}
-      <Footer/>
-    </View>
+        {editora != null ? (
+          <View>
+            <FlatList
+              data={editora.listaLivrosDTO}
+              renderItem={({ item }) => <Livro item={item} />}
+            />
+          </View>
+        ) : (
+          <Text style={styles.info}>Carregando...</Text>
+        )}
+      </View>
+      <Footer />
+    </>
   );
 }
 

@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     borderRadius: 20,
-    border: "none",
     backgroundColor: "#FFF",
     width: 200,
   },
@@ -126,7 +125,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 20,
-    border: "none",
     backgroundColor: "#FFF",
     width: 165,
   },
@@ -141,7 +139,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     fontSize: 15,
     padding: 10,
-    border: "none",
   },
   logoContainer: {
     display: "flex",

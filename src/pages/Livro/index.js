@@ -15,7 +15,6 @@ export function Livro({ route }) {
         headers: { Authorization: `Bearer ${dadosUsuario?.token}` },
       });
       setLivro(newLivro.data);
-      console.log(newLivro.data);
     } catch (error) {
       console.log(error);
     }
@@ -26,25 +25,27 @@ export function Livro({ route }) {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <StatusBar />
-      {livro != null ? (
-        <>
-          <Image
-            source={{ uri: `data:image/png;base64,${livro.img}` }}
-            style={styles.image}
-          />
-          <Text style={styles.info}>Livro: {livro.nomeLivro}</Text>
-          <Text style={styles.info}>Autor: {livro.autorDTO.nomeAutor}</Text>
-          <Text style={styles.info}>
-            Editora: {livro.editoraDTO.nomeEditora}
-          </Text>
-        </>
-      ) : (
-        <Text style={styles.info}>Carregando...</Text>
-      )}
-      <Footer/>
-    </View>
+    <>
+      <View style={styles.container}>
+        <StatusBar />
+        {livro != null ? (
+          <>
+            <Image
+              source={{ uri: `data:image/png;base64,${livro.img}` }}
+              style={styles.image}
+            />
+            <Text style={styles.info}>Livro: {livro.nomeLivro}</Text>
+            <Text style={styles.info}>Autor: {livro.autorDTO.nomeAutor}</Text>
+            <Text style={styles.info}>
+              Editora: {livro.editoraDTO.nomeEditora}
+            </Text>
+          </>
+        ) : (
+          <Text style={styles.info}>Carregando...</Text>
+        )}
+      </View>
+      <Footer />
+    </>
   );
 }
 

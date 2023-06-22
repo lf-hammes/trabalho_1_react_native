@@ -138,8 +138,8 @@ export function Home() {
             </View>
           </TouchableOpacity>
         </View>
-        <Footer/>
       </ScrollView>
+        <Footer/>
     </View>
   );
 }
