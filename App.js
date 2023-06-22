@@ -13,10 +13,12 @@ const App = () => {
   return (
     <DataProvider>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Login" component={Login} />
+        <Stack.Navigator screenOptions={{headerStyle: {
+          backgroundColor: 'rgba(43, 51, 65, 1)'
+        }, headerTintColor: 'white'}}>
+          <Stack.Screen name="Login" component={Login} options={screenOptions = {headerShown: false}}/>
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Editora" component={Editora}/>
+          <Stack.Screen name="Editora" component={Editora} />
           <Stack.Screen name="Livro" component={Livro} />
         </Stack.Navigator>
       </NavigationContainer>

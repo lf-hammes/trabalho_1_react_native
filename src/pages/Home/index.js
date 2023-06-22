@@ -100,7 +100,6 @@ export function Home() {
   return (
     <View style={styles.container}>
       <StatusBar/>
-      <Header/>
       <ScrollView>
         <StatusBar />
         <View>

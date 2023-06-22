@@ -33,15 +33,12 @@ export function Editora({ route }) {
 
   useEffect(() => {
     getLivros();
-    console.log(idEditora);
   }, []);
 
   return (
-    
-      <ScrollView>
-      <View style={styles.container}>
+    <View style={styles.container}>
       <StatusBar />
-        <Header />
+      <ScrollView>
         {editora != null ? (
           editora.listaLivrosDTO.map((livro) => {
             console.log(livro);
@@ -61,9 +58,8 @@ export function Editora({ route }) {
         ) : (
           <Text>Carregando...</Text>
         )}
-      </View>
       </ScrollView>
-    
+    </View>
   );
 }
 
@@ -72,7 +68,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(57,68,87,1)",
     alignItems: "center",
-    minHeight: 700,
   },
   livro: {
     margin: 10,

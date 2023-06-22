@@ -38,7 +38,6 @@ export function Livro({ route }) {
   return (
     <View style={styles.container}>
         <StatusBar />
-        <Header />
         {
           livro != null ? (
             <>
