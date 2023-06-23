@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     width: "90%",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "flex-start",
     marginBottom: 40
   },
   searchBar: {
@@ -124,14 +124,22 @@ const styles = StyleSheet.create({
   },
   livro: {
     height: 167,
-    width: 110
+    width: 110,
+    borderBottomLeftRadius: 10,
+    borderTopLeftRadius: 10
   },
   info: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    padding: 15,
+    paddingLeft: 15,
     justifyContent: 'space-evenly',
+    minWidth: 260,
+    height: 167,
+    textAlign: 'center',
+    backgroundColor: 'rgba(43, 51, 65, 1)',
+    borderTopRightRadius:10,
+    borderBottomRightRadius: 10
   },
   text: {
     color: '#fcbc5c',
