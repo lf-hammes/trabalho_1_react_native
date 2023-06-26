@@ -62,7 +62,7 @@ export function Search() {
     } else {
         setLivros(
           allLivros.filter((livro) =>
-            livro.nomeLivro.toLowerCase().includes(texto.toLowerCase())
+            livro.nomeLivro.toLowerCase().includes(texto.toLowerCase()) || livro.autorDTO.nomeAutor.toLowerCase().includes(texto.toLowerCase()) || livro.editoraDTO.nomeEditora.toLowerCase().includes(texto.toLowerCase())
           )
         );
     }
